@@ -1,6 +1,7 @@
 import re
 from datetime import time
 from requests import get
+from typing import Dict
 
 class Message:
     """
@@ -131,7 +132,7 @@ class Message:
 
         return False
 
-    def output(self) -> str:
+    def output(self) -> Dict:
         """
         Builds the output dictionary.
         It contains the output to be written with the id_message and broker_id.

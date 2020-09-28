@@ -17,7 +17,6 @@ class Sender:
 
     def execute(self):
         """
-        Executes
         Starts by reading the file, then create an message object that will verify if the message is valid.
         If the message is valid its appended to the valid_message list
         Further it verifies if there are messages to the same number
