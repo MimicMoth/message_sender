@@ -3,10 +3,12 @@
 O projeto consiste em um filtro de mensagens a serem enviadas.
 
 O arquivo de entrada é em formato .txt e cada linha possui a seguinte formatação:
-IDMENSAGEM;DDD;CELULAR;OPERADORA;HORARIO_ENVIO;MENSAGEM
+
+_IDMENSAGEM;DDD;CELULAR;OPERADORA;HORARIO_ENVIO;MENSAGEM_
 
 E o arquivo de saída é em formato .txt e possui a seguinte formatação:
-IDMENSAGEM;IDBROKER
+
+_IDMENSAGEM;IDBROKER_
 
 # Como utilizar
 
