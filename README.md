@@ -17,8 +17,11 @@ Para executar o projeto utiliza-se o comando:
     python3 main.py [arg1] [arg2]
 
 O primeiro argumento representa o nome do arquivo de "input"
+
 O segundo argumento representa o nome do arquivo de "output"
+
 Caso apenas um agumento seja passado, será considerado como o nome do arquivo de "input"
+
 Caso nenhum argumento seja passado, ele irá procurar por um arquivo padrão com o nome "input.txt" e o resultado será impresso em um arquivo "output.txt"
 
 # Regra Implementadas:
