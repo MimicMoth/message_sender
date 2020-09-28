@@ -2,42 +2,64 @@ from msg_sender.message import Message
 from pathlib import Path
 
 class Sender:
+    """
+    Controls the flow of the execution
+    Accepts two parameters at initialization
+    The first is the input file name and the second is the output file name
+    If no parameters are passed, it utilizes the standard input.txt and output.txt
+    """
 
-    STANDARD_FILE = 'input.txt'
-
-    def __init__(self):
-        self.msg_list = []
-        self.send_message_numbers = []
+    def __init__(self, input = 'input.txt', output = 'output.txt'):
+        self._data_list = []
+        self._valid_messages = []
+        self.input = input
+        self.output = output
 
     def execute(self):
-        self.read_file()
+        """
+        Executes
+        Starts by reading the file, then create an message object that will verify if the message is valid.
+        If the message is valid its appended to the valid_message list
+        Further it verifies if there are messages to the same number
+        Finally it writes the output to a file
+        """
+        self._read_file()
 
-        for msg in self.msg_list:
+        for data in self._data_list:
             try:
-                message = Message(msg.split(';'))
-
+                message = Message(data.split(';'))
                 if message.validate():
-                    self.send_message_numbers.append(message.output())
-
+                    self._valid_messages.append(message.output())
             except:
                 continue
 
-        self.verify_duplicate()
-        self.write_msg()
+        self._verify_duplicate()
+        self._write_msg()
 
-    def read_file(self):
-        FILE_PATH = Path.cwd().joinpath(self.STANDARD_FILE)
+    def _read_file(self):
+        """
+        Reads the file at the standard input path and add each line as an item into the list data_list
+        """
+        FILE_PATH = Path.cwd().joinpath(self.input)
 
         with open(FILE_PATH, 'r') as f:
-            self.msg_list = f.read().splitlines()
+            self._data_list = f.read().splitlines()
 
-    def write_msg(self):
-        with open('./write_out.txt', 'a') as f:
-            f.writelines(map(lambda x: x['final_msg'], self.send_message_numbers))
+    def _write_msg(self):
+        """
+        Writes the "output" content accumulated in the valid_messages into the standard output file
+        """
+        FILE_PATH = Path.cwd().joinpath(self.output)
 
-    def verify_duplicate(self):
+        with open(FILE_PATH, 'a') as f:
+            output_text = map(lambda msg: msg['output'], self._valid_messages)
+            f.writelines(output_text)
 
-        for msg in self.send_message_numbers:
-            for msg2 in self.send_message_numbers:
-                if msg['phone_number'] == msg2['phone_number'] and msg['sent_time'] < msg2['sent_time']:
-                    self.send_message_numbers.remove(msg2)
+    def _verify_duplicate(self):
+        """
+        Verify duplicate messages to the same number and filter to keep only the one with the earliest sent time
+        """
+        for message in self._valid_messages:
+            for verification in self._valid_messages:
+                if message['phone_number'] == verification['phone_number'] and message['sent_time'] < verification['sent_time']:
+                    self._valid_messages.remove(verification)

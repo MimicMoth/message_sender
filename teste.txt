@@ -1,0 +1,20 @@
+01;041;984563217;TIM;18:56:03;ddd com 3 digitos
+02;23;983761547;CLARO;15:24:23;ddd invalido
+03;41;9834512578;VIVO;12:47:59;celular com mais de 9 digitos
+04;27;98345127;OI;14:54:34;celular com menos de 9 digitos
+05;41;995965773;TIM;15:56:21;mensagem correta 1
+06;73;684752198;NEXTEL;19:31:16;celular nao começa com 9
+
+07;82;957845782;OI;08:06:07;segundo digito menor que 6
+08;68;960636588;CLARO;10:14:56;numero na blacklist
+09;11;986547552;TIM;05:06:02;mensagem para sao paulo
+10;96;973254625;CLARO;06:07:02;certo mas sera substituido
+Random Text
+11;18;986547852;VIVO;12:13:45;Outra mensagem para sao paulo
+12;91;996532541;TIM;21:22:33;mensagem apos as 20h
+13;51;995647854;VIVO;15:56:32;mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres mensagem com mais de 140 caracteres
+14;96;973254625;CLARO;03:07:02;mensagem 10 com horario menor
+21;im;here;to;cause;trouble
+15;46;994659846;NEXTEL;09:57:32;mensagem correta 2
+16;96;973254625;CLARO;09:07:02;mensagem 10 com horario maior
+17;87;998457534;TELSTRA;08:25:42; mensagem com broker invalido
