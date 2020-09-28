@@ -100,6 +100,7 @@ class Message:
         """
         Check if the number is in the blacklist by calling the api.
         if the status code is 200 it's in the blacklist.
+
         Returns a boolean.
         """
         phone_number = self.content['ddd'] + self.content['phone']
@@ -112,7 +113,8 @@ class Message:
 
     def _valid_msg(self) -> bool:
         """
-        Verify if the length of the message is higher than 140 characteres.
+        Verify if the length of the message is higher than 140 characters.
+
         Returns a boolean.
         """
         if len(self.content['message']) <= 140:
@@ -122,7 +124,8 @@ class Message:
 
     def _valid_time(self) -> bool:
         """
-        Verify if the message was sent latter than 19:59:59 by analyzing the hour component.
+        Verify if the message was sent later than 19:59:59 by analyzing the hour component.
+
         Returns a boolean
         """
         hour = int(self.content['sent_time'].split(':')[0])
@@ -160,6 +163,8 @@ class Message:
     def _find_broker(self) -> str:
         """
         Check the broker in the content and returns the brokers id.
+
+        Returns an string
         """
         for broker in self._ID_BROKER:
             for broker_name in broker[1]:
