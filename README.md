@@ -50,7 +50,7 @@ Caso nenhum argumento seja passado, ele irá procurar por um arquivo padrão com
 Foi utilizado o modulo unittest do Python para rodar os testes unitarios
 O arquivo está em tests.py e pode ser rodado com:
 
-    python3 test.py
+    python3 tests.py
 
 Os teste unitarios buscam validar as funções utilizadas para o projeto
 
