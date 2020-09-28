@@ -92,7 +92,7 @@ class Message:
 
         Return a boolean
         """
-        phone_validator = re.compile('9[6-9]\d{7}$')
+        phone_validator = re.compile('9[7-9]\d{7}$')
         return re.findall(phone_validator, self.content['phone'])
 
     def _check_blacklist(self) -> bool:
